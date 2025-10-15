@@ -4,7 +4,7 @@
 set -euo pipefail
 
 # Set SUPERPOWERS_SKILLS_ROOT environment variable
-export SUPERPOWERS_SKILLS_ROOT="${HOME}/.config/superpowers/skills"
+export SUPERPOWERS_SKILLS_ROOT="${HOME}/superpowers/skills"
 
 # Run skills initialization script (handles clone/fetch/auto-update)
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" && pwd)"
