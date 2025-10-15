@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-SKILLS_DIR="${HOME}/.config/superpowers/skills"
+SKILLS_DIR="${HOME}/superpowers/skills"
 SKILLS_REPO="https://github.com/obra/superpowers-skills.git"
 
 # Check if skills directory exists and is a valid git repo
@@ -49,18 +49,18 @@ fi
 echo "Initializing skills repository..."
 
 # Handle migration from old installation
-if [ -d "${HOME}/.config/superpowers/.git" ]; then
+if [ -d "${HOME}/superpowers/.git" ]; then
     echo "Found existing installation. Backing up..."
-    mv "${HOME}/.config/superpowers/.git" "${HOME}/.config/superpowers/.git.bak"
+    mv "${HOME}/superpowers/.git" "${HOME}/superpowers/.git.bak"
 
-    if [ -d "${HOME}/.config/superpowers/skills" ]; then
-        mv "${HOME}/.config/superpowers/skills" "${HOME}/.config/superpowers/skills.bak"
-        echo "Your old skills are in ~/.config/superpowers/skills.bak"
+    if [ -d "${HOME}/superpowers/skills" ]; then
+        mv "${HOME}/superpowers/skills" "${HOME}/superpowers/skills.bak"
+        echo "Your old skills are in ~/superpowers/skills.bak"
     fi
 fi
 
 # Clone the skills repository
-mkdir -p "${HOME}/.config/superpowers"
+mkdir -p "${HOME}/superpowers"
 git clone "$SKILLS_REPO" "$SKILLS_DIR"
 
 cd "$SKILLS_DIR"
